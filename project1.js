@@ -1,3 +1,5 @@
+// project 1 Code starts
+
 let btn = document.querySelector("#new-quote");
 let quote = document.querySelector(".quote");
 let person = document.querySelector(".person");
@@ -44,10 +46,6 @@ const quotes = [
     person: `Lao Tzu`,
   },
 ];
-
-// let btn = document.querySelector("#new-quote");
-// let quote = document.querySelector(".quote");
-// let person = document.querySelector(".person");
 
 btn.addEventListener("click", changeQuote);
 
