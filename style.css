@@ -197,3 +197,9 @@ body {
   overflow: hidden;
   transition: 0.5s;
 }
+
+/* JavaScript styling link */
+
+.accordion .content-container.active .answer {
+  height: 150px;
+}
