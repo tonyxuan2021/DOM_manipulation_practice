@@ -146,7 +146,7 @@ body {
 
 /* project 3 code starts */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -196,10 +196,67 @@ body {
   height: 0px;
   overflow: hidden;
   transition: 0.5s;
-}
+} */
 
 /* JavaScript styling link */
 
-.accordion .content-container.active .answer {
+/* .accordion .content-container.active .answer {
   height: 150px;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: url(img/project-4.jpg) no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 60%;
+  height: 250px;
+  background-color: white;
+  border-radius: 30px;
+  box-shadow: 0 0 3px;
+}
+
+#timer {
+  width: 100%;
+  font-size: 72px;
+  text-align: center;
+  margin: 0px auto;
+  padding: 35px;
+}
+
+.buttons {
+  text-align: center;
+}
+
+button {
+  margin: 0 10px;
+  border: none;
+}
+
+button i {
+  font-size: 2rem;
+  padding: 10px;
+  color: white;
+}
+
+#play {
+  background-color: green;
+}
+
+#pause {
+  background-color: orange;
+}
+
+#reset {
+  background-color: red;
 }
