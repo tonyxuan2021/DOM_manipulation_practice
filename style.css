@@ -204,7 +204,7 @@ body {
   height: 150px;
 } */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -259,4 +259,18 @@ button i {
 
 #reset {
   background-color: red;
+} */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background: url(img/project-5.jpg) no-repeat center center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
