@@ -1,83 +1,44 @@
-{
-  /* <div class="container">
-<div id="add-task-container">
-  <input type="text" placeholder="Enter Task" id="input-task" />
-  <button id="add-task"><i class="fa-solid fa-plus"></i></button>
-</div>
+// selectors
 
-<div id="task-container"></div>
-</div> */
-}
+const addTask = document.getElementById("add-task");
+const taskContainer = document.getElementById("task-container");
+const inputTask = document.getElementById("input-task");
 
-// selector
+// Event listener for Add btn
 
-const taskContainer = document.querySelector("#task-container");
-const userInput = document.querySelector("#input-task");
-const addBtn = document.querySelector("#add-task");
+addTask.addEventListener("click", function () {
+  let task = document.createElement("div");
+  task.classList.add("task");
 
-// event listener
+  let li = document.createElement("li");
+  li.innerText = `${inputTask.value}`;
+  task.appendChild(li);
 
-addBtn.addEventListener("click", addItem);
-taskContainer.addEventListener("click", deleteItem);
+  let checkButton = document.createElement("button");
+  checkButton.innerText = "+";
+  checkButton.classList.add("checkTask");
+  task.appendChild(checkButton);
 
-// functions
+  let deleteButton = document.createElement("button");
+  deleteButton.innerText = "-";
+  deleteButton.classList.add("deleteTask");
+  task.appendChild(deleteButton);
 
-{
-  /* <div id="task-container">
-<ul class="task-list-container">
-  <div class="task-item-container">
-    <li class="task-item">Hey</li>
-    <div class="btns">
-      <p class="update-btn">+</p>
-      <p class="delete-btn">-</p>
-    </div>
-  </div>
-</ul>
-</div> */
-}
-
-function addItem() {
-  const itemContainer = document.createElement("ul");
-  itemContainer.classList.add("task-list-container");
-  const taskItemContainer = document.createElement("div");
-  taskItemContainer.classList.add("task-item-container");
-  itemContainer.append(taskItemContainer);
-  const taskItem = document.createElement("li");
-  taskItem.classList.add("task-item");
-  taskItemContainer.append(taskItem);
-  taskItem.innerText = userInput.value;
-
-  // create btns
-  const btns = document.createElement("div");
-  btns.classList.add("btns");
-  taskItemContainer.append(btns);
-
-  const updateBtn = document.createElement("button");
-  updateBtn.classList.add("update-btn");
-  updateBtn.innerText = "+";
-  btns.append(updateBtn);
-
-  const deleteBtn = document.createElement("button");
-  deleteBtn.classList.add("delete-btn");
-  deleteBtn.innerText = "-";
-  btns.append(deleteBtn);
-
-  taskContainer.append(itemContainer);
-
-  userInput.value = "";
-}
-
-function deleteItem(e) {
-  // console.log(e.target.classList[0]);
-  let targetBtn = e.target;
-
-  if (targetBtn.classList[0] === "delete-btn") {
-    targetBtn.parentElement.parentElement.remove();
-    //   }
+  if (inputTask.value === "") {
+    alert("please enter something");
+  } else {
+    taskContainer.appendChild(task);
   }
 
-  if (targetBtn.classList[0] === "update-btn") {
-    targetBtn.parentElement.parentElement.classList.toggle("complete");
-    //   }
-  }
-}
+  inputTask.value = "";
+
+  checkButton.addEventListener("click", function () {
+    checkButton.parentElement.style.textDecoration = "line-through";
+  });
+
+  deleteButton.addEventListener("click", function (e) {
+    let targeted = e.target;
+
+    targeted.parentElement.remove();
+  });
+});
